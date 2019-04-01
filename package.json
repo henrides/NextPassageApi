@@ -1,0 +1,19 @@
+{
+  "name": "nextpassageapi",
+  "version": "1.0.0",
+  "description": "NextPassage Firebase Function for REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrides/NextPassageApi.git"
+  },
+  "author": "Marc-Olivier Mercier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrides/NextPassageApi/issues"
+  },
+  "homepage": "https://github.com/henrides/NextPassageApi#readme"
+}
