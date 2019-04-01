@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/henrides/NextPassageApi/issues"
   },
-  "homepage": "https://github.com/henrides/NextPassageApi#readme"
+  "homepage": "https://github.com/henrides/NextPassageApi#readme",
+  "devDependencies": {
+    "firebase-tools": "^6.5.0"
+  }
 }
