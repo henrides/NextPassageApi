@@ -13,25 +13,23 @@ app.route('/nextPassages').post((request, response) => {
         return;
     }
 
-    const passages: any = [];
     const passagesP: any = [];
     request.body.trips.forEach((trip: any) => {
-        passagesP.push(admin.database().ref('/tripUpdates/' + trip.route + '/' + trip.stop).once('value').then((data: any) => {
-            console.log(JSON.stringify(data));
-            passages.push({
-                route: trip.route,
-                stop: trip.stop,
-                passages: data.val().nextPassages
-            });
-        }).catch((error: any) => {
-            console.log(JSON.stringify(error));
-        }));
+        passagesP.push(admin.database().ref('/tripUpdates/' + trip.route + '/' + trip.stop).once('value'));
     });
 
-    Promise.all(passagesP).then(() => {
-        response.send(passages);
+    Promise.all(passagesP).then((values) => {
+        response.send(values.map((x: any) => {
+            console.log(JSON.stringify(x.val()));
+            return {
+                route: x.val().routeId,
+                stop: x.val().stopId,
+                passages: x.val().nextPassages
+            };
+        }));
     }).catch((error: any) => {
         console.log(JSON.stringify(error));
+        response.status(400).send('Invalid trip');
     });
 });
 
