@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/henrides/NextPassageApi#readme",
   "devDependencies": {
-    "firebase-tools": "^6.5.0"
+    "firebase-tools": "^13.3.0"
   }
 }
